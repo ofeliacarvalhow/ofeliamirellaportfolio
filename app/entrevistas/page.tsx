@@ -1,0 +1,13 @@
+import { DesignGallery, InterviewCard, PageHeading, SiteShell } from '../site'
+
+// Para trocar o gif por vídeo de verdade: coloque o arquivo em public/videos/ e
+// preencha o campo video abaixo (ex.: '/videos/donola.mp4'). O campo image segue
+// como poster, exibido enquanto o vídeo carrega.
+const interviews = [
+  { name: 'Vinicius Donola', role: 'Comunicação e mídia', format: 'horizontal', objectPosition: 'center 22%', video: '/videos/donola.mp4', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/22_%20VINICIUS%20D%C3%94NOLA_1080p%20%28online-video-cutter.com%29.gif-HJ519pDK6Z9kwlIlHD0Jotguagffz1.jpeg' },
+  { name: 'Fátima Bernardes', role: 'Jornalista e apresentadora', format: 'vertical', video: '/videos/fatima.mp4', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Entrevista_F%C3%A1timaBernardes%20%28online-video-cutter.com%29.gif-oRfgpRxuceLadUimB4I8IMODPnMQsN.jpeg' },
+  { name: 'Mary Livanos', role: 'Produtora executiva na Marvel Studios', format: 'vertical', video: '/videos/mary.mp4', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FGV%20Comunica%C3%A7%C3%A3o%20no%20Rio2C_%20Entrevista%20com%20Mary%20Livatos_720p%20%28online-video-cutter.com%29.gif-B2AGSnGyIrfVduhRNxDttvXC8QZG8o.jpeg' },
+  { name: 'Regina Casé', role: 'Atriz e apresentadora', format: 'vertical', video: '/videos/regina.mp4', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0805%281%29.gif-VhBuf1QOFXPziXKyjz08IVdSHeJOOT.jpeg' },
+]
+
+export default function Entrevistas() { return <SiteShell><main className="page-wrap listing"><PageHeading label="/ ENTREVISTAS" title="Conversas com quem faz comunicação e mídia no Brasil." text="Alguns dos trabalhos jornalísticos que fiz até agora."/><img className="work-reference-image interviews-hero" src="/images/assessoria-de-imprensa.jpeg" alt="Ofélia Mirella trabalhando como entrevistadora"/><div className="interviews-intro is-centered"><p>Como aluna, atuei ao lado da equipe de Assessoria de Imprensa da FGV Comunicação em eventos institucionais como Rio2C, Rio Innovation Week e Fórum Rio Empreendedor. Nessas coberturas, apurei, roteirizei e realizei entrevistas em vídeo com profissionais da indústria de comunicação, algumas delas em inglês.</p><p>A experiência aprimorou minha capacidade de apuração sob prazo curto, condução de entrevistas e produção de conteúdo audiovisual para comunicação institucional. Abaixo, algumas dessas entrevistas.</p><div className="skills">APURAÇÃO · ENTREVISTAS · ROTEIRO · INGLÊS · AUDIOVISUAL</div></div><div className="interviews interviews-grid">{interviews.map((item) => <InterviewCard key={item.name} {...item}/>)}</div><DesignGallery name="imprensa" /></main></SiteShell> }
